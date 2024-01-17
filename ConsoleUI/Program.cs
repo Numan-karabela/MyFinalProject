@@ -26,10 +26,21 @@ namespace ConsoleUI
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetProductsDetails())
+            var result= productManager.GetProductsDetails();
+            if (result.Succees==true)
             {
-                Console.WriteLine(product.ProductName+"/"+product.CategoryName);
+                foreach (var product in productManager.GetProductsDetails().Data)
+                {
+                    Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+                }
+
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+
         }
     }
 }
