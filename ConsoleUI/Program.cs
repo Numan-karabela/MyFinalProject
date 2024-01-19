@@ -20,8 +20,7 @@ namespace ConsoleUI
 
             ProductTest();
 
-        }
-
+        } 
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
