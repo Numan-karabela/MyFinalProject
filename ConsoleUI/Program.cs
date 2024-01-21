@@ -16,17 +16,17 @@ namespace ConsoleUI
                 Console.WriteLine(category.CategoryName);
 
             }
-                
+
 
             ProductTest();
 
-        } 
+        }
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            var result= productManager.GetProductsDetails();
-            if (result.Succees==true)
+            var result = productManager.GetProductsDetails();
+            if (result.Succees == true)
             {
                 foreach (var product in productManager.GetProductsDetails().Data)
                 {
